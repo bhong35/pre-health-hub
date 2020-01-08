@@ -7,71 +7,94 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import NewsScreen from '../screens/NewsScreen';
 
 const config = Platform.select({
-  web: { headerMode: 'screen' },
-  default: {},
+    web: { headerMode: 'screen' },
+    default: {},
 });
 
 const HomeStack = createStackNavigator(
-  {
-    Home: HomeScreen,
-  },
-  config
+    {
+        Home: HomeScreen,
+    },
+    config
 );
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
-  ),
+    tabBarLabel: 'Home',
+    tabBarIcon: ({ focused }) => (
+        <TabBarIcon
+            focused={focused}
+            name={Platform.OS === 'ios' ? `ios-home` : 'md-home'}
+        />
+    ),
 };
 
 HomeStack.path = '';
 
 const LinksStack = createStackNavigator(
-  {
-    Links: LinksScreen,
-  },
-  config
+    {
+        Links: LinksScreen,
+    },
+    config
 );
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
-  ),
+    tabBarLabel: 'Links',
+    tabBarIcon: ({ focused }) => (
+        <TabBarIcon
+            focused={focused}
+            name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+        />
+    ),
 };
 
 LinksStack.path = '';
 
+const NewsStack = createStackNavigator(
+    {
+        News: NewsScreen,
+    },
+    config
+);
+
+NewsStack.navigationOptions = {
+    tabBarLabel: 'News',
+    tabBarIcon: ({ focused }) => (
+        <TabBarIcon
+            focused={focused}
+            name={Platform.OS === 'ios' ? 'ios-paper' : 'md-paper'}
+        />
+    ),
+};
+
+NewsStack.path = '';
+
 const SettingsStack = createStackNavigator(
-  {
-    Settings: SettingsScreen,
-  },
-  config
+    {
+        Settings: SettingsScreen,
+    },
+    config
 );
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
-  ),
+    tabBarLabel: 'Settings',
+    tabBarIcon: ({ focused }) => (
+        <TabBarIcon
+            focused={focused}
+            name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+        />
+    ),
 };
 
 SettingsStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack,
+    HomeStack,
+    LinksStack,
+    NewsStack,
+    SettingsStack
 });
 
 tabNavigator.path = '';
