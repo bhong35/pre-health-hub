@@ -9,9 +9,10 @@ app.use(cors());
 
 async function getNews() {
     const data = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${config.password.apiKey}`);
-    return data.data;
+    return data.data.articles;
 }
 
+// get news articles from api
 app.get('/get/news', (req, res) => {
     getNews()
     .then(result => {
@@ -20,13 +21,6 @@ app.get('/get/news', (req, res) => {
     .catch(error => {
         console.log(error);
     });
-    // axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${config.password.apiKey}`)
-    // .then(result => {
-    //     res.send(result.data);
-    // })
-    // .catch(error => {
-    //     console.log(error);
-    // })
 });
 
 const port = 4000;

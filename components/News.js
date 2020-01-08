@@ -9,6 +9,7 @@ import {
     View,
 } from 'react-native';
 import axios from 'axios';
+// import Articles from './Articles';
 
 export default class News extends React.Component {
     constructor(props) {
@@ -35,8 +36,9 @@ export default class News extends React.Component {
     render() {
         return (
             <View styles={styles.container}>
-                <Text>Another hi</Text>
-                <Text styles={styles.newsText}>Hello World</Text>
+                <Flatlist>
+                    {/* <Articles /> */}
+                </Flatlist>
             </View>
         );
     }
