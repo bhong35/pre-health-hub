@@ -40,14 +40,14 @@ export default class News extends Component {
                     // data: [array[i].author, array[i].urlToImage, array[i].url],
                     author: array[i].author,
                     image: array[i].urlToImage,
-                    data: [ array[i].url ]
+                    url: array[i].url
                 })
             }
             return data;
         })
         .then(response => {
             this.setState({
-                articles: response
+                listData: response
             })
         })
         .catch(error => {
@@ -58,7 +58,7 @@ export default class News extends Component {
     render() {
         return (
             <View styles={styles.container}>
-                <Articles articles={this.state.articles} />
+                <Articles listData={this.state.listData} />
             </View>
         );
     }
