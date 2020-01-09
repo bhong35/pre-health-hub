@@ -14,12 +14,14 @@ import {
 import axios from 'axios';
 import Articles from './Articles';
 import config from '../config';
+import Article from './Article';
 
 export default class News extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            articles: []
+            articles: [],
+            refreshing: true
         };
 
         this.getNews = this.getNews.bind(this);
@@ -32,34 +34,62 @@ export default class News extends Component {
     getNews() {
         axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${config.password.apiKey}`)
         .then(response => {
-            let array = response.data.articles;
-            let data = [];
-            for (let i = 0; i < response.data.articles.length; i++) {
-                data.push({
-                    title: array[i].title,
-                    // data: [array[i].author, array[i].urlToImage, array[i].url],
-                    author: array[i].author,
-                    image: array[i].urlToImage,
-                    url: array[i].url
-                })
-            }
-            return data;
-        })
-        .then(response => {
             this.setState({
-                listData: response
+                articles: response.articles,
+                refreshing: false
             })
         })
         .catch(error => {
-            console.log(error);
+            this.setState({
+                refreshing: false
+            });
         });
     }
 
+    handleRefresh() {
+        this.setState({
+            refreshing: true
+        }, () => {
+            this.getNews();
+        });
+    }
+
+    // ! used in Articles
+    // getNews() {
+    //     axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${config.password.apiKey}`)
+    //     .then(response => {
+    //         let array = response.data.articles;
+    //         let data = [];
+    //         for (let i = 0; i < response.data.articles.length; i++) {
+    //             data.push({
+    //                 title: array[i].title,
+    //                 // data: [array[i].author, array[i].urlToImage, array[i].url],
+    //                 author: array[i].author,
+    //                 image: array[i].urlToImage,
+    //                 url: array[i].url
+    //             })
+    //         }
+    //         return data;
+    //     })
+    //     .then(response => {
+    //         this.setState({
+    //             articles: response
+    //         })
+    //     })
+    //     .catch(error => {
+    //         console.log(error);
+    //     });
+    // }
+
     render() {
         return (
-            <View styles={styles.container}>
-                <Articles listData={this.state.listData} />
-            </View>
+            <FlatList
+                data={this.state.articles}
+                renderItem={({ item }) => <Article article={item} />}
+                keyExtractor={item => item.url}
+                refreshing={this.state.refreshing}
+                onRefresh={this.handleRefresh.bind(this)}
+            />
         );
     }
 

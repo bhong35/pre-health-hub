@@ -18,7 +18,7 @@ import { Container, Header, Content, List, ListItem, Thumbnail, Left, Body, Righ
 
 // ! FlatList - Works only for lists
 // export default function Articles(props) {
-//     let data = props.listData;
+//     let data = props.articles;
 //     console.log("!!!!", data);
 
 //     function Item({ title, author, image, url }) {
@@ -45,7 +45,7 @@ import { Container, Header, Content, List, ListItem, Thumbnail, Left, Body, Righ
 
 // ! SectionList - Works only for lists
 // export default function Articles(props) {
-//     const data = props.listData;
+//     const data = props.articles;
 //     console.log("!!!!", data);
 
 //     function Item({ title, author, image, url }) {
