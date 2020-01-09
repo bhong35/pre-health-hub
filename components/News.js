@@ -32,8 +32,22 @@ export default class News extends Component {
     getNews() {
         axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${config.password.apiKey}`)
         .then(response => {
+            let array = response.data.articles;
+            let data = [];
+            for (let i = 0; i < response.data.articles.length; i++) {
+                data.push({
+                    title: array[i].title,
+                    // data: [array[i].author, array[i].urlToImage, array[i].url],
+                    author: array[i].author,
+                    image: array[i].urlToImage,
+                    data: [ array[i].url ]
+                })
+            }
+            return data;
+        })
+        .then(response => {
             this.setState({
-                articles: response.data.articles
+                articles: response
             })
         })
         .catch(error => {
