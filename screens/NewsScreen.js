@@ -6,12 +6,9 @@ import News from '../components/News';
 
 const NewsScreen = () => {
     return (
-        <ScrollView style={styles.container}>
-            <Text>Hello World</Text>
-            <View>
-                <News />
-            </View>
-        </ScrollView>
+        <View>
+            <News />
+        </View>
     );
 }
 

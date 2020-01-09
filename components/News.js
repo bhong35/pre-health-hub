@@ -13,12 +13,13 @@ import {
 } from 'react-native';
 import axios from 'axios';
 import Articles from './Articles';
+import config from '../config';
 
 export default class News extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tasks: ["one", "two"]
+            articles: []
         };
 
         this.getNews = this.getNews.bind(this);
@@ -29,9 +30,11 @@ export default class News extends Component {
     }
 
     getNews() {
-        axios.get('/get/news')
+        axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${config.password.apiKey}`)
         .then(response => {
-            console.log(response);
+            this.setState({
+                articles: response.data.articles
+            })
         })
         .catch(error => {
             console.log(error);
@@ -41,26 +44,34 @@ export default class News extends Component {
     render() {
         return (
             <View styles={styles.container}>
-                <SafeAreaView>
-                    <FlatList
-                        style={styles.list}
-                        data={this.state.tasks}
-                        renderItem={({ item, index }) =>
-                            <View>
-                                <View style={styles.listItemCont}>
-                                    <Text style={styles.listItem}>
-                                        {item.text}
-                                    </Text>
-                                    <Button title="X" onPress={() => this.deleteTask(index)} />
-                                </View>
-                                <View style={styles.hr} />
-                            </View>}
-                    />
-                </SafeAreaView>
-                <Text>Hi!</Text>
+                <Articles articles={this.state.articles} />
             </View>
         );
     }
+
+    // render() {
+    //     return (
+    //         <View styles={styles.container}>
+    //             <FlatList
+    //                 style={styles.list}
+    //                 data={this.state.articles}
+    //                 renderItem={({ item, index }) =>
+    //                     <View>
+    //                         <View style={styles.listItemCont} onPress={() => Linking.openURL(item.url)}>
+    //                             <Text style={styles.title} key={index}>
+    //                                 {item.title}
+    //                             </Text>
+    //                             <Text style={styles.author} key={index}>
+    //                                 {item.author}
+    //                             </Text>
+    //                             <Image src={item.urlToImage} style={styles.image} key={index}></Image>
+    //                         </View>
+    //                         <View style={styles.hr} />
+    //                     </View>}
+    //             />
+    //         </View>
+    //     );
+    // }
 }
 
 const styles = StyleSheet.create({
@@ -75,4 +86,10 @@ const styles = StyleSheet.create({
         lineHeight: 24,
         textAlign: 'center',
     },
+    list: {
+        color: 'blue',
+        textAlign: 'center',
+        marginTop: 10,
+        marginBottom: 10
+    }
 });
