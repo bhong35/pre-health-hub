@@ -1,5 +1,15 @@
 import React from 'react';
+import {
+    Image,
+    Platform,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
+    Flatlist
+} from 'react-native';
 
-export default Articles = (props) => {
+export default function Articles(props) {
     return(<Text>Hello World Again</Text>);
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
     Image,
     Platform,
@@ -7,14 +7,19 @@ import {
     Text,
     TouchableOpacity,
     View,
+    FlatList,
+    SafeAreaView,
+    Button
 } from 'react-native';
 import axios from 'axios';
-// import Articles from './Articles';
+import Articles from './Articles';
 
-export default class News extends React.Component {
+export default class News extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            tasks: ["one", "two"]
+        };
 
         this.getNews = this.getNews.bind(this);
     }
@@ -36,9 +41,23 @@ export default class News extends React.Component {
     render() {
         return (
             <View styles={styles.container}>
-                <Flatlist>
-                    {/* <Articles /> */}
-                </Flatlist>
+                <SafeAreaView>
+                    <FlatList
+                        style={styles.list}
+                        data={this.state.tasks}
+                        renderItem={({ item, index }) =>
+                            <View>
+                                <View style={styles.listItemCont}>
+                                    <Text style={styles.listItem}>
+                                        {item.text}
+                                    </Text>
+                                    <Button title="X" onPress={() => this.deleteTask(index)} />
+                                </View>
+                                <View style={styles.hr} />
+                            </View>}
+                    />
+                </SafeAreaView>
+                <Text>Hi!</Text>
             </View>
         );
     }

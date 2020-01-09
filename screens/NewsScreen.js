@@ -1,15 +1,21 @@
-import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-import { ExpoLinksView } from '@expo/samples';
+// import React from 'react';
+import { ScrollView, StyleSheet, Text, View} from 'react-native';
+import React, { Component } from 'react';
+// import { ExpoLinksView } from '@expo/samples';
 import News from '../components/News';
 
-export default function NewsScreen() {
+const NewsScreen = () => {
     return (
         <ScrollView style={styles.container}>
-            <News />
+            <Text>Hello World</Text>
+            <View>
+                <News />
+            </View>
         </ScrollView>
     );
 }
+
+export default NewsScreen;
 
 NewsScreen.navigationOptions = {
     title: 'Links',
