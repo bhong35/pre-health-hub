@@ -41,11 +41,11 @@ const LinksStack = createStackNavigator(
 );
 
 LinksStack.navigationOptions = {
-    tabBarLabel: 'Links',
+    tabBarLabel: 'Flashcards',
     tabBarIcon: ({ focused }) => (
         <TabBarIcon
             focused={focused}
-            name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+            name={Platform.OS === 'ios' ? 'ios-albums' : 'md-albums'}
         />
     ),
 };
