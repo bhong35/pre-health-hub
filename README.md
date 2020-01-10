@@ -37,7 +37,7 @@ Deployment link coming soon!
     <!-- <td align="center"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--K2q0A5SX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/2elgd5zp07wkeilkna63.png" alt="Heroku" title="Heroku" width="60px"/></td> -->
   </tr>
   <tr>
-    <td align="center"><img src="https://images.app.goo.gl/j88vcyfm61YHZA696" alt="React-Navigation" title="React-Navigation" width="80px"/></td>
+    <td align="center"><img src="https://pbs.twimg.com/profile_images/1156727030827716608/gppZ606-_400x400.png" alt="React-Navigation" title="React-Navigation" width="80px"/></td>
     <td align="center"><img src="https://buttercms.com/static/images/tech_banners/ExpressJS.png" alt="Express" title="Express" width="60px"/></td>
   </tr>
   <tr>
