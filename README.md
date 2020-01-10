@@ -13,8 +13,7 @@ Deployment link coming soon!
 1. [UserStories](#userstories)
 2. [Stack](#stack)
 3. [GetStarted](#getstarted)
-4. [Challenges](#challenges)
-5. [Learnings](#learnings)
+4. [Reflections](#reflections)
 6. [Contributors](#contributors)
 
 # UserStories
