@@ -11,13 +11,11 @@ Deployment link coming soon!
 ## Table of Contents
 
 1. [UserStories](#userstories)
-2. [Requirements](#requirements)
-3. [Development](#development)
-4. [Stack](#stack)
-5. [GetStarted](#getstarted)
-6. [Challenges](#challenges)
-7. [Learnings](#learnings)
-8. [Contributors](#contributors)
+2. [Stack](#stack)
+3. [GetStarted](#getstarted)
+4. [Challenges](#challenges)
+5. [Learnings](#learnings)
+6. [Contributors](#contributors)
 
 # UserStories
 
