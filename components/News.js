@@ -17,6 +17,7 @@ import config from '../config';
 import Article from './Article';
 import compareVersions from 'compare-versions';
 import Booboo from '../assets/images/booboo.png';
+import { Linking } from 'expo';
 
 export default class News extends Component {
     constructor(props) {
@@ -65,21 +66,22 @@ export default class News extends Component {
                     style={styles.list}
                     data={this.state.articles}
                     renderItem={({ item }) =>
-                        <View>
-                            <View style={styles.listItemCont} onPress={() => Linking.openURL(item.url)}>
+                        <TouchableOpacity onPress={() => Linking.openURL(item.url)}>
+                            <View style={styles.listItemCont}>
                                 <Image 
                                 source={ item.image ? { uri: item.image } : Booboo }
                                 style={styles.image}>
                                 </Image>
-                                <Text style={styles.title}>
-                                    {item.title}
-                                </Text>
-                                <Text style={styles.author}>
-                                    {item.author}
-                                </Text>
+                                <View style={styles.text}>
+                                    <Text style={styles.title}>
+                                        {item.title}
+                                    </Text>
+                                    <Text style={styles.author}>
+                                        {item.author}
+                                    </Text>
+                                </View>
                             </View>
-                            <View style={styles.hr} />
-                        </View>}
+                        </TouchableOpacity>}
                     keyExtractor={item => item.url}
                 />
             </View>
@@ -92,12 +94,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 10,
         marginBottom: 20,
-    },
-    newsText: {
-        fontSize: 17,
-        color: 'rgba(96,100,109, 1)',
-        lineHeight: 24,
-        textAlign: 'center',
+        alignItems: 'center'
     },
     list: {
         color: 'blue',
@@ -109,7 +106,10 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         margin: 10,
-
+        marginHorizontal: 5,
+        textShadowColor: 'black',
+        textShadowOffset: { width: 3, height: 3 },
+        textShadowRadius: 3
     },
     image: {
         width: 50,
@@ -117,6 +117,11 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         borderRadius: 5
     },
-    title: {
+    text: {
+        flexDirection: 'column',
+        width: 0,
+        flexGrow: 1,
+        marginLeft: 'gutter',
+        marginLeft: 10
     }
 });
