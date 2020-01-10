@@ -4,6 +4,9 @@ The Pre-Health Hub is an all-in-one productivity mobile app that boosts any pre-
 
 ## In Action
 
+![HomeScreen](./assets/readme/prehealthhub-home.gif)
+![NewsScreen](./assets/readme/prehealthhub-news.gif)
+
 Deployment link coming soon!
 <!-- <a href='https://financr.herokuapp.com/'>Heroku Deployment Link</a> -->
 
@@ -17,9 +20,6 @@ Deployment link coming soon!
 ## Coming Soon:
 - As a user, I want to be able to use flashcards to help me study.
 - As a user, I want to be able to log in and have my own custom settings.
-
-![HomeScreen](./assets/readme/prehealthhub-home.gif)
-![NewsScreen](./assets/readme/prehealthhub-news.gif)
 
 # Stack
 
