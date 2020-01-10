@@ -10,16 +10,16 @@ Deployment link coming soon!
 
 ## Table of Contents
 
-1. [User Stories](#userstories)
+1. [UserStories](#userstories)
 2. [Requirements](#requirements)
 3. [Development](#development)
 4. [Stack](#stack)
-5. [Get Started](#getstarted)
+5. [GetStarted](#getstarted)
 6. [Challenges](#challenges)
 7. [Learnings](#learnings)
 8. [Contributors](#contributors)
 
-# User Stories
+# UserStories
 
 ## Implemented:
 - As a user, I want to be greeted at the home screen.
@@ -64,7 +64,7 @@ Users and associated data are stored in a MongoDB Atlas cluster. Express RESTful
 ## Deployment
 This section will be updated once the app has been deployed successfully.
 
-# Get started
+# GetStarted
 Take the following steps to run the app in your localhost, you will need to have the following:
 - A MongoDB Atlas cluster must be set up, and the appropriate cluster URI and password must be added to the config.js file.
 
@@ -75,11 +75,13 @@ yarn or npm start
 npm run server
 ```
 
+# Reflections
+
 ## Challenges
 This project was focused on testing my ability to pick-up a new technology and implement a minimum viable product in 2 days. I decided to learn and implement React-Native to create an app that could potentially provide assistance to students who are studying in the highly competitive and challenging field of health-care.
 
 ## Learnings
 React Navigation provides a very user-friendly interface for users, and allows highly modularized components when implementing the library. This can be paired with React Native Reanimated to provide fluid transitions and animations.
 
-# Contributors
+## Contributors
 [Benjamin Hong](https://github.com/bhong35)
