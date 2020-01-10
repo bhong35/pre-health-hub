@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import AppNavigator from './navigation/AppNavigator';
+import { getCustomTabsSupportingBrowsersAsync } from 'expo-web-browser';
+import News from './components/News';
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
@@ -56,6 +58,6 @@ function handleFinishLoading(setLoadingComplete) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'rgba(255, 99, 71, 0.15)',
   },
 });

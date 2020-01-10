@@ -20,11 +20,7 @@ export default function HomeScreen() {
         contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
           <Image
-            source={
-              __DEV__
-                ? require('../assets/images/robot-dev.png')
-                : require('../assets/images/robot-prod.png')
-            }
+            source={require('../assets/images/cross.png')}
             style={styles.welcomeImage}
           />
         </View>
@@ -32,22 +28,23 @@ export default function HomeScreen() {
         <View style={styles.getStartedContainer}>
           <DevelopmentModeNotice />
 
-          <Text style={styles.getStartedText}>Get started by opening</Text>
+          <Text style={styles.getStartedText}>You're gonna do great today! :)</Text>
 
           <View
-            style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-            <MonoText>screens/HomeScreen.js</MonoText>
+            style={[styles.codeHighlightContainer, styles.encouragement]}>
+            <MonoText>Here's to achieving your goals!</MonoText>
           </View>
 
           <Text style={styles.getStartedText}>
-            Change this text and your app will automatically reload.
+            Get started by opening the News Tab:
           </Text>
+          <Image source={require('../assets/images/down-arrow.png')} style={styles.arrowImage} />
         </View>
 
         <View style={styles.helpContainer}>
           <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
             <Text style={styles.helpLinkText}>
-              Help, it didn’t automatically reload!
+              Here we go~
             </Text>
           </TouchableOpacity>
         </View>
@@ -55,13 +52,13 @@ export default function HomeScreen() {
 
       <View style={styles.tabBarInfoContainer}>
         <Text style={styles.tabBarInfoText}>
-          This is a tab bar. You can edit it in:
+            You can navigate between our different tools below:
         </Text>
 
         <View
           style={[styles.codeHighlightContainer, styles.navigationFilename]}>
           <MonoText style={styles.codeHighlightText}>
-            navigation/MainTabNavigator.js
+            Have fun!
           </MonoText>
         </View>
       </View>
@@ -111,7 +108,7 @@ function handleHelpPress() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'rgba(255, 99, 71, 0.15)',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -139,8 +136,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 50,
   },
-  homeScreenFilename: {
-    marginVertical: 7,
+  encouragement: {
+    marginVertical: 7
   },
   codeHighlightText: {
     color: 'rgba(96,100,109, 0.8)',
@@ -195,4 +192,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#2e78b7',
   },
+  arrowImage: {
+      width: 50,
+      height: 50,
+      marginTop: 20
+  }
 });

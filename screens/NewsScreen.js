@@ -6,7 +6,7 @@ import News from '../components/News';
 
 const NewsScreen = () => {
     return (
-        <View>
+        <View style={styles.container}>
             <News />
         </View>
     );
@@ -15,13 +15,13 @@ const NewsScreen = () => {
 export default NewsScreen;
 
 NewsScreen.navigationOptions = {
-    title: 'Links',
+    title: 'News',
 };
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 15,
-        backgroundColor: '#fff',
+        backgroundColor: 'rgba(255, 99, 71, 0.15)',
     },
 });
