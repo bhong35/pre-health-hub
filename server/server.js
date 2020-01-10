@@ -7,6 +7,10 @@ const config = require('../config');
 app.use(cors());
 app.use(express.json());
 
+app.get('/test', (req, res) => {
+    res.send("hit test route");
+})
+
 // async function getNews() {
 //     const data = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${config.password.apiKey}`);
 //     return data.data.articles;
