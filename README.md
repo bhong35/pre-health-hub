@@ -18,7 +18,7 @@ Deployment link coming soon!
 - As a user, I want to be able to use flashcards to help me study.
 - As a user, I want to be able to log in and have my own custom settings.
 
-![HomeScreen](./assets/readme/prehealthhub-hom.gif)
+![HomeScreen](./assets/readme/prehealthhub-home.gif)
 ![NewsScreen](./assets/readme/prehealthhub-news.gif)
 
 # Stack
