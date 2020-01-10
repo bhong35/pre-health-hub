@@ -18,10 +18,11 @@ export default function HomeScreen() {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
-          <Image
-            source={require('../assets/images/cross.png')}
-            style={styles.welcomeImage}
-          />
+            <Text style={styles.prehealthhub}>The Pre-Health Hub</Text>
+            <Image
+                source={require('../assets/images/cross.png')}
+                style={styles.welcomeImage}
+            />
         </View>
 
         <View style={styles.getStartedContainer}>
@@ -124,6 +125,14 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
   },
+  prehealthhub: {
+      fontSize: 30,
+      alignItems: 'center',
+      fontWeight: 'bold',
+      color: 'rgba(127, 190, 225, 1)',
+      marginTop: 100,
+      marginBottom: 20
+  },
   welcomeImage: {
     width: 100,
     height: 80,
@@ -181,7 +190,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   helpContainer: {
-    marginTop: 15,
+    marginTop: 5,
     alignItems: 'center',
   },
   helpLink: {
@@ -194,6 +203,6 @@ const styles = StyleSheet.create({
   arrowImage: {
       width: 50,
       height: 50,
-      marginTop: 20
+      marginTop: 15
   }
 });
