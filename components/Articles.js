@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { Linking } from 'expo';
 import SafeAreaView from 'react-native-safe-area-view';
-import { Container, Header, Content, List, ListItem, Thumbnail, Left, Body, Right, Button } from 'native-base';
+// import { Container, Header, Content, List, ListItem, Thumbnail, Left, Body, Right, Button } from 'native-base';
 // import Article from './Article.js';
 // import { blue } from 'ansi-colors';
 
