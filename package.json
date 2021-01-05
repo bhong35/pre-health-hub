@@ -17,7 +17,7 @@
     "@expo/vector-icons": "~10.0.0",
     "@react-navigation/web": "~1.0.0-alpha.9",
     "assert": "^2.0.0",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "cors": "^2.8.5",
     "expo": "~36.0.0",
     "expo-asset": "~8.0.0",
